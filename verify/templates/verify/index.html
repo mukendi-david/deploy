@@ -1,0 +1,44 @@
+{% extends 'shared_layout/base.html' %}
+{%block title%} Mes resultats {%endblock title%}
+{%block contents%}
+<main class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="bg-body-tertiary p-5 rounded">
+                <h1>Mes resultats</h1>
+                <p class="lead">Trouvez rapidement vos resultat academique juste en inserant votre identifiant ( code ) étudiants sur la barre de recherche ci-dessous </p>
+                <form class="d-flex col-md-5" role="search" method="post" action="{% url 'verify:search' %}">
+                  {% csrf_token %}
+                  <input required class="form-control me-2" type="search" placeholder="Votre code étudian" aria-label="Search" name="code">
+                  <button class="btn btn-outline-success" type="submit">Rechercher</button>
+                </form>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6">
+                  <div class="h-100 p-5 text-bg-dark rounded-3">
+                    <h2>Change the background</h2>
+                    <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
+                    <button class="btn btn-outline-light" type="button">Example button</button>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                    <h2>Add borders</h2>
+                    <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+                    <button class="btn btn-outline-secondary" type="button">Example button</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+  </main>
+
+
+  
+  
+{%endblock contents%}
+
